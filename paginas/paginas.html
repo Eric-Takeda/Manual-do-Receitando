@@ -1,0 +1,481 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Páginas do Aplicativo - Manual Técnico</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <img
+            class="logo-cabecalho"
+            src="../imagens/ReceitandoApp.png"
+            alt="Logo do Receitando"
+        >
+
+        <div class="titulo-cabecalho">
+            <h1>Manual Técnico</h1>
+            <p>Documentação do Receitando</p>
+        </div>
+    </header>
+
+    <nav>
+        <a href="../index.html">Início</a>
+        <a href="introducao.html">Introdução</a>
+        <a href="tecnologias.html">Tecnologias</a>
+        <a href="arquitetura.html">Arquitetura</a>
+        <a href="banco-de-dados.html">Banco de Dados</a>
+        <a href="funcionalidades.html">Funcionalidades</a>
+        <a href="paginas.html">Páginas</a>
+        <a href="seguranca.html">Segurança</a>
+        <a href="sobre-criador.html">Sobre o criador</a>
+    </nav>
+
+    <main>
+
+        <section>
+            <h2>Organização das telas</h2>
+
+            <p>
+                O Receitando é dividido em diferentes telas,
+                cada uma responsável por uma parte da experiência
+                do usuário. Essa organização facilita a navegação
+                e a manutenção do código.
+            </p>
+
+            <p>
+                As telas são desenvolvidas com Flutter e utilizam
+                widgets para construir elementos como botões,
+                campos de texto, imagens, listas e barras de navegação.
+            </p>
+        </section>
+
+        <section>
+            <h2>1. Tela de cadastro</h2>
+
+            <p>
+                A tela de cadastro permite criar uma nova conta
+                para utilizar o aplicativo.
+            </p>
+
+            <p>
+                As informações preenchidas são encaminhadas ao
+                Supabase Auth. Os dados complementares do perfil
+                podem ser armazenados na tabela
+                profiles, conforme a implementação
+                do cadastro.
+            </p>
+            <p>
+            --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            </p>
+
+            <p><strong>Principais elementos:</strong></p>
+
+            <ul>
+                <li>Nome de usuário;</li>
+                <li>Campo para e-mail;</li>
+                <li>Campo para senha;</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>2. Tela de login</h2>
+
+            <p>
+                A tela de login permite que um usuário já cadastrado
+                entre em sua conta utilizando e-mail e senha.
+            </p>
+
+            <p>
+                Os dados informados são enviados ao serviço de
+                autenticação do Supabase. Quando a autenticação
+                é bem-sucedida, o usuário pode acessar o menu principal.
+            </p>
+
+            <p>
+            --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            </p>
+
+            <p><strong>Principais elementos:</strong></p>
+
+            <ul>
+                <li>Campo para e-mail;</li>
+                <li>Campo para senha;</li>
+                <li>Botão para entrar;</li>
+                <li>Acesso ao cadastro;</li>
+                <li>Opção de recuperação de senha.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>3. Tela de recuperação de senha</h2>
+
+            <p>
+                Essa tela permite solicitar a recuperação de acesso
+                por meio de um e-mail. O processo depende das
+                configurações de autenticação e dos redirecionamentos
+                definidos no Supabase.
+            </p>
+
+            <p>
+                Após receber o link de recuperação, o usuário pode
+                ser encaminhado ao fluxo de definição de uma nova
+                senha, conforme a configuração do aplicativo.
+            </p>
+            
+            <p>
+            --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            </p>
+
+
+            <p><strong>Principais elementos:</strong></p>
+
+            <ul>
+                <li>Endereço de e-mail para o envio da solicitação de nova senha;</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>4. Menu principal</h2>
+
+            <p>
+                O menu principal é a tela apresentada após o acesso
+                à conta. Ele serve como ponto de partida para navegar
+                pelas principais áreas do sistema.
+            </p>
+
+            <p>
+                Entre os acessos disponíveis na implementação estão
+                a consulta de receitas e o cadastro de uma nova receita.
+                Outras opções podem ser acessadas por suas respectivas
+                telas quando estiverem integradas ao menu.
+            </p>
+
+            <p>
+            --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            </p>
+
+            <p><strong>Principais elementos:</strong></p>
+
+            <ul>
+                <li>Receitas;</li>
+                <li>Criação de Receitas;</li>
+                <li>Lista de Favoritos;</li>
+                <li>Perfil do Usuário;</li>
+                <li>Configurações do Aplicativo;</li>
+                <li>Sair da conta;</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>5. Tela de receitas</h2>
+
+            <p>
+                A tela de receitas apresenta os pratos cadastrados
+                no banco de dados. Ela permite pesquisar receitas,
+                filtrar por categoria e selecionar uma receita para
+                consultar mais informações.
+            </p>
+
+            <p>
+            --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            </p>
+
+            <p><strong>Elementos principais:</strong></p>
+
+            <ul>
+                <li>Campo de pesquisa;</li>
+                <li>Seleção de categorias;</li>
+                <li>Cartões com informações das receitas;</li>
+                <li>Imagens das preparações, quando disponíveis;</li>
+                <li>Navegação para a tela de detalhes.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>6. Tela de detalhes da receita</h2>
+
+            <p>
+                Essa tela exibe as informações completas da receita
+                selecionada, incluindo título, descrição, ingredientes,
+                modo de preparo, tempo e quantidade de porções,
+                conforme os dados cadastrados.
+            </p>
+
+            <p>
+                A tela também contém a ação de favoritar. A opção
+                de editar deve estar disponível somente para receitas
+                que o usuário tenha permissão para modificar.
+            </p>
+
+            <p>
+            --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            </p>
+
+            <p><strong>Principais elementos:</strong></p>
+
+            <ul>
+                <li>Visualização das informações e imagens cadastradas;</li>
+                <li>Opção de favoritar quaisquer receitas;</li>
+                <li>Opção de editar receitas cadastradas que foram criadas pelos usuários.</li>
+            </ul>
+
+        </section>
+
+        <section>
+            <h2>7. Tela de cadastro de receita</h2>
+
+            <p>
+                A tela de cadastro permite inserir uma nova receita.
+                Ela reúne os campos necessários para registrar as
+                informações da preparação e seus ingredientes.
+            </p>
+
+            <p>
+                Também permite selecionar uma imagem da galeria
+                do dispositivo. Os dados são armazenados no Supabase,
+                e a imagem é enviada ao armazenamento configurado
+                para as fotos das receitas.
+            </p>
+
+            <p>
+            --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            </p>
+
+            <p><strong>Principais elementos:</strong></p>
+
+            <ul>
+                <li>Adicionar informações das receitas;</li>
+                <li>Adicionar imagens das receitas.</li>
+            </ul>
+
+        </section>
+
+        <section>
+            <h2>8. Tela de edição de receita</h2>
+
+            <p>
+                Essa tela permite atualizar os dados de uma receita
+                criada pelo próprio usuário, respeitando as regras
+                de acesso do sistema.
+            </p>
+
+            <p>
+                É possível alterar os campos disponíveis e substituir
+                ou remover a imagem, conforme as opções implementadas.
+                As receitas previamente disponibilizadas pelo sistema
+                não devem ser alteradas ou excluídas pelo usuário comum.
+            </p>
+
+            <p>
+            --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            </p>
+
+            <p><strong>Principais elementos:</strong></p>
+
+            <ul>
+                <li>Adicionar informações das receitas;</li>
+                <li>Adicionar imagens das receitas.</li>
+            </ul>
+
+        </section>
+
+        <section>
+            <h2>9. Tela de favoritos</h2>
+
+            <p>
+                A tela de favoritos reúne as receitas que o usuário
+                marcou para consultar posteriormente.
+            </p>
+
+            <p>
+                Os favoritos são relacionados à conta autenticada
+                e recuperados do banco de dados. Ao selecionar um
+                item, o usuário pode acessar os detalhes da receita.
+            </p>
+
+            <p>
+            --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            </p>
+
+            <p><strong>Principais elementos:</strong></p>
+
+            <ul>
+                <li>Opção de visualizar as receitas favoritadas.</li>
+            </ul>
+
+        </section>
+
+        <section>
+            <h2>10. Tela de perfil</h2>
+
+            <p>
+                A tela de perfil apresenta informações da conta do
+                usuário e permite atualizar os dados disponibilizados
+                nessa área.
+            </p>
+
+            <p>
+                Entre os recursos previstos estão a visualização
+                dos dados pessoais cadastrados e a seleção de uma
+                foto de perfil. A imagem é armazenada no Supabase
+                Storage e associada ao perfil.
+            </p>
+
+            <p>
+            --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            </p>
+
+            <p><strong>Principais elementos:</strong></p>
+
+            <ul>
+                <li>Visualizar seu nome, email e data de criação da conta;</li>
+                <li>Opção de adicionar foto de perfil e visualiza-las;</li>
+                <li>Edição de nome da conta e foto de perfil.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>11. Configurações</h2>
+
+            <p>
+                A tela de configuração apresenta mais informações internas sobre o aplicativo.
+            </p>
+
+            <p>
+                Entre os recursos previstos estão as opções de
+                mudar de tema, alteração de senha, perfil e mais
+                informações sobre o aplicativo;
+            </p>
+
+            <p>
+            --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            </p>
+
+            <p><strong>Principais elementos:</strong></p>
+
+            <ul>
+                <li>Navegação para mudar de senha, tema, conta, perfis e informações do Receitando.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>12. Alterar senha</h2>
+
+            <p>
+                A tela de alteração de senha permite
+                o usuário logado trocar a senha desejada.
+            </p>
+
+            <p>
+                Basta apenas digitar um senha nova e confirmar
+                a senha nova.
+            </p>
+
+            <p>
+            --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            </p>
+
+            <p><strong>Principais elementos:</strong></p>
+
+            <ul>
+                <li>Alteração de senha.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>13. Tema</h2>
+
+            <p>
+                A tela de tema permite que o usuário troca a cor do sistema.
+            </p>
+
+            <p>
+                Entre os temas estão os "Claro", "Escuro" e "Sistema".
+                Por padrão do aplicativo, é inicializado com o "Sistema".
+            </p>
+
+            <p>
+            --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            </p>
+
+            <p><strong>Principais elementos:</strong></p>
+
+            <ul>
+                <li>Alteração tema claro - Cor predominante Branca;</li>
+                <li>Alteração tema escuro - Cor predominante Escura arroxeado;</li>
+                <li>Alteração tema sistema - Cor predominante amarelada, igual este manual técnico;</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>13. Sobre o aplicativo</h2>
+
+            <p>
+                Permite visualizar informações sobre o aplicativo.
+            </p>
+
+            <p>
+            --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            </p>
+
+            <p><strong>Principais elementos:</strong></p>
+
+            <ul>
+                <li>Visualização do nome do criador;</li>
+                <li>Visualização da logotipo do Receitando;</li>
+                <li>Visualização da versão do aplicativo;</li>
+                <li>Visualização de uma pequena descrição;</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Navegação entre as telas</h2>
+
+            <p>
+                A navegação conecta as telas conforme as ações
+                realizadas pelo usuário. O fluxo geral de utilização
+                pode ser representado da seguinte forma:
+            </p>
+
+            <ol>
+                <li>O usuário abre o aplicativo.</li>
+                <li>Realiza o login ou cria uma conta.</li>
+                <li>Acessa o menu principal.</li>
+                <li>Entra na tela de receitas ou inicia o cadastro
+                    de uma nova receita.</li>
+                <li>Seleciona uma receita para consultar os detalhes.</li>
+                <li>Quando permitido, edita suas próprias receitas
+                    ou utiliza a funcionalidade de favoritos.</li>
+                <li>Acessa o perfil para consultar ou atualizar
+                    suas informações.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Considerações finais</h2>
+
+            <p>
+                A divisão do aplicativo em telas independentes
+                contribui para a organização do projeto. Cada tela
+                possui uma responsabilidade específica e se comunica
+                com as demais por meio da navegação implementada
+                no Flutter.
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Manual Técnico do Receitando</p>
+    </footer>
+
+</body>
+</html>
