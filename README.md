@@ -3,3 +3,4 @@
 </p>
 
 Link do Projeto: https://github.com/Eric-Takeda/Aplicativo-Receitando
+Link do Manual: https://eric-takeda.github.io/Manual-do-Receitando/
